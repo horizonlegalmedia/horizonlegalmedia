@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { selectionPoint, houseOfNaksh, iforumLawyers } from '../../data/images/clients'
+import { selectionPoint, houseOfNaksh, iforumLawyers, divineEnergies } from '../../data/images/clients'
 
 
 const ourClients = [
@@ -22,12 +22,17 @@ const ourClients = [
         id: 3,
         name: "iforumLawyers",
         url: iforumLawyers
+    },
+    {
+        id: 4,
+        name: "divineEnergies",
+        url: divineEnergies
     }
 ]
 
 const OurClients = () => {
     return (
-        <section className='bg-gradient-to-br from-gray-900 to-blue-900 text-white'> 
+        <section className='bg-gradient-to-br from-gray-900 to-blue-900 text-white'>
             <div className='container mx-auto px-4 py-8 '>
                 <h1 className='text-center font-bold text-4xl mb-8'>Our Clients</h1>
                 <div className='px-4 md:px-8 lg:px-20 py-12 relative'>
@@ -76,14 +81,16 @@ const OurClients = () => {
                             >
                                 <div className="relative group w-40 h-40 xl:w-64 xl:h-64 flex items-center justify-center">
                                     <div className="absolute inset-0 bg-gradient-to-br rounded-full" />
-                                    <img
-                                        src={client.url}
-                                        alt={client.name}
-                                        className="object-cover object-top rounded-full shadow-xl w-full h-full
-                                        transition-transform duration-300 group-hover:scale-105 bg-white"    
-                                        // style={{ display: 'block' }} // Critical for Swiper centering
-                                    />
+                                    <div className="absolute inset-0 rounded-full bg-white overflow-hidden">
+                                        <img
+                                            src={client.url}
+                                            alt={client.name}
+                                            className="object-cover object-center w-full h-full 
+            transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                    </div>
                                 </div>
+
                             </SwiperSlide>
                         ))}
 
@@ -98,3 +105,5 @@ const OurClients = () => {
 }
 
 export default OurClients
+
+
