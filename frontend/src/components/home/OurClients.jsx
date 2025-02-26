@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
-import { selectionPoint, houseOfNaksh, iforumLawyers, divineEnergies } from '../../data/images/clients'
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { selectionPoint, houseOfNaksh, iforumLawyers } from '../../data/images/clients'
 
 
 const ourClients = [
@@ -22,12 +22,7 @@ const ourClients = [
         id: 3,
         name: "iforumLawyers",
         url: iforumLawyers
-    },
-    {
-        id: 4,
-        name: "divineEnergies",
-        url: divineEnergies
-    },
+    }
 ]
 
 const OurClients = () => {
@@ -49,11 +44,12 @@ const OurClients = () => {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
                         }}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
                         breakpoints={{
-                            420: {
-                                slidesPerView: 2,
-                                centeredSlides: false,
-                            },
                             640: {
                                 slidesPerView: 2,
                                 spaceBetween: 20,
@@ -70,7 +66,7 @@ const OurClients = () => {
                                 centeredSlides: false,
                             },
                         }}
-                        modules={[Pagination, Navigation]}
+                        modules={[Pagination, Navigation, Autoplay]}
                         className="mySwiper !px-4 sm:!px-8"
                     >
                         {ourClients.map((client) => (
@@ -78,12 +74,12 @@ const OurClients = () => {
                                 key={client.id}
                                 className="!flex !items-center !justify-center !h-auto py-4"
                             >
-                                <div className="relative group w-40 h-40 lg:w-64 lg:h-64 flex items-center justify-center">
+                                <div className="relative group w-40 h-40 xl:w-64 xl:h-64 flex items-center justify-center">
                                     <div className="absolute inset-0 bg-gradient-to-br rounded-full" />
                                     <img
                                         src={client.url}
                                         alt={client.name}
-                                        className="object-contain object-top rounded-full shadow-xl w-full h-full
+                                        className="object-cover object-top rounded-full shadow-xl w-full h-full
                                         transition-transform duration-300 group-hover:scale-105 bg-white"    
                                         // style={{ display: 'block' }} // Critical for Swiper centering
                                     />
@@ -92,8 +88,8 @@ const OurClients = () => {
                         ))}
 
                         {/* Custom Navigation */}
-                        <div className="swiper-button-prev !text-gray-800 font-bold !w-10 !h-10 after:!text-xl" />
-                        <div className="swiper-button-next !text-gray-800 font-bold !w-10 !h-10 after:!text-xl" />
+                        <div className="swiper-button-prev !text-white font-bold !w-10 !h-10 after:!text-xl" />
+                        <div className="swiper-button-next !text-white font-bold !w-10 !h-10 after:!text-xl" />
                     </Swiper>
                 </div>
             </div>

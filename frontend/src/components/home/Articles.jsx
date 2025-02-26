@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
-import { article1, article2, article3, article4,article5 } from '../../data/images/articles'
+import { article1, article3,article5 } from '../../data/images/articles'
 import { Link } from 'react-router-dom'
 
 const articles = [
@@ -78,8 +78,8 @@ const Articles = () => {
           </SwiperSlide>
         ))}
 
-        <div className="swiper-button-prev !text-gray-800 font-extrabold !w-10 !h-10 after:!text-4xl" />
-        <div className="swiper-button-next !text-gray-800 font-extrabold !w-10 !h-10 after:!text-4xl" />
+        <div className="swiper-button-prev !text-gray-800 font-extrabold !w-10 !h-10 after:!text-4xl -mx-4" />
+        <div className="swiper-button-next !text-gray-800 font-extrabold !w-10 !h-10 after:!text-4xl -mx-4" />
 
       </Swiper>
     </div>

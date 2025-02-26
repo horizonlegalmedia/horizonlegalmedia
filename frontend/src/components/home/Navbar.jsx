@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to manage login status
 
   return (
-    <nav className="bg-[#081a28] text-white lg:h-20 lg:pt-4 text-md font-extrabold fixed w-full z-1000">
+    <nav className="bg-[#081a28] text-white h-20 pt-2 lg:h-20 lg:pt-4 text-md font-extrabold fixed w-full z-1000">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
@@ -21,7 +21,7 @@ const Navbar = () => {
                 alt="Company Logo"
               />
             </Link>
-            <span className='text-xs tracking-tighter font-normal md:font-bold mx-0.5 md:text-xl md:mx-2'>Horizon Legal Media Group</span>
+            <span className='text-xs tracking-tighter font-bold md:font-bold mx-0.5 md:text-xl md:mx-2'>Horizon Legal Media Group</span>
 
           </div>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
 
           <div className='flex md:hidden'>
             {/* Mobile Menu Login Button or Mobile Menu Profile*/}
-            <div className="md:hidden flex items-center">
+            {/* <div className="md:hidden flex items-center">
               {
                 isLoggedIn ? (
                   // User Profile Icon
@@ -83,7 +83,7 @@ const Navbar = () => {
                     </Link>
                   )
               }
-            </div>
+            </div> */}
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
@@ -108,7 +108,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.link}
                 className={({ isActive }) =>
-                  `block px-3 py-2 rounded-md text-base font-medium ${isActive ? 'bg-gradient-to-br from-gray-900 to-blue-900 text-white' : 'text-gray-700 hover:bg-gray-100'
+                  `block px-3 py-2 rounded-md text-base font-medium ${isActive ? 'bg-gradient-to-br from-gray-900 to-blue-900 text-white' : 'text-gray-700 hover:bg-gray-200'
                   }`
                 }
                 onClick={()=>setIsMenuOpen(!isMenuOpen)}
