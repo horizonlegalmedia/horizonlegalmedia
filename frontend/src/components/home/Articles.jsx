@@ -1,40 +1,40 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
-import { article1, article3,article5 } from '../../data/images/articles'
 import { Link } from 'react-router-dom'
 
-const articles = [
-  {
-    id: 1,
-    slug: "Top-5-legal-considerations-starting-business",
-    title: 'Top 5 Legal Considerations When Starting Your Own Business',
-    description: 'Starting your own business can be an exciting and rewarding venture, but it’s also filled with legal complexities that could impact the long-term success of your company.',
-    image: article1,
-  },
-  {
-    id: 2,
-    slug: "role-of-contracts-protecting-freelancers-contractors",
-    title: 'The Role of Contracts in Protecting Freelancers and Contractors',
-    description: 'Freelancers and contractors play a crucial role in today’s workforce, providing specialized skills and services to a wide range of clients.',
-    image: article3,
-  },
-  {
-    id: 3,
-    slug: "legal-issues-social-media-influencers-should-know",
-    title: 'Legal Issues Every Social Media Influencer Should Be Aware Of',
-    description: 'Social media influencers have become powerful figures in the digital age, with the ability to shape trends, promote products, and influence consumer behavior. ',
-    image: article5,
-  },
-];
-
 const Articles = () => {
+  const [topFiveArticles, setTopFiveArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Fetch Top article from backend
+    axios.get("http://localhost:5000/api/articles/top-five-articles")
+      .then(response => {
+        setTopFiveArticles(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError("Failed to load articles.");
+        setLoading(false);
+      });
+  }, []);
+
+  if(!topFiveArticles){
+    <div></div>
+  }
+
+  if (loading) return <p>Loading articles...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8">Top 3 Articles</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">Top 5 Articles</h2>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -58,13 +58,13 @@ const Articles = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        {articles.map((article) => (
+        {topFiveArticles.map((article) => (
           <SwiperSlide key={article.id}>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+              <img src={article.image.url} alt={article.title} className="w-full h-48 object-cover object-top" />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 line-clamp-1">{article.title}</h3>
-                <p className="text-gray-600 line-clamp-2">{article.description}</p>
+                <p className="text-gray-600 line-clamp-2">{article.introductoryPara}</p>
                 <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
                   <Link
                     to={`/articles/${article.slug}`}

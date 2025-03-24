@@ -94,7 +94,7 @@ const Footer = () => {
                   <Instagram className="h-8 w-8 text-2xl" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/horizon-legal-media-group/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-gray-400 transition duration-300"

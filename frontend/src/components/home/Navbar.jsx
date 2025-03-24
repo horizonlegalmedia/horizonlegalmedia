@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, User } from 'lucide-react'; // Import icons from react-lucide
 import { navItems } from '../../data/dummy';
-import logo from '../../data/logo.png';
+import logo from '../../data/images/others/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
 
           {/* Login/Signup or User Profile - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* <div className="hidden md:flex items-center space-x-4">
             {isLoggedIn ? (
               // User Profile Icon
               <button className="p-2 rounded-full hover:bg-slate-600">
@@ -65,7 +65,7 @@ const Navbar = () => {
                 </Link>
               </>
             )}
-          </div>
+          </div> */}
 
           <div className='flex md:hidden'>
             {/* Mobile Menu Login Button or Mobile Menu Profile*/}

@@ -4,31 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { selectionPoint, houseOfNaksh, iforumLawyers, divineEnergies } from '../../data/images/clients'
-
-
-const ourClients = [
-    {
-        id: 1,
-        name: "Selection Point",
-        url: selectionPoint
-    },
-    {
-        id: 2,
-        name: "House Of Naksh",
-        url: houseOfNaksh
-    },
-    {
-        id: 3,
-        name: "iforumLawyers",
-        url: iforumLawyers
-    },
-    {
-        id: 4,
-        name: "divineEnergies",
-        url: divineEnergies
-    }
-]
+import { ourClients } from '../../data/images/clients/ourClients';
 
 const OurClients = () => {
     return (
@@ -79,7 +55,7 @@ const OurClients = () => {
                                 key={client.id}
                                 className="!flex !items-center !justify-center !h-auto py-4"
                             >
-                                <div className="relative group w-40 h-40 xl:w-64 xl:h-64 flex items-center justify-center">
+                                <div className="relative group w-40 h-40 2xl:w-64 2xl:h-64 flex items-center justify-center">
                                     <div className="absolute inset-0 bg-gradient-to-br rounded-full" />
                                     <div className="absolute inset-0 rounded-full bg-white overflow-hidden">
                                         <img

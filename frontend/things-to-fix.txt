@@ -1,0 +1,2 @@
+1) articles data folder and all stuff --Done
+2) footer ui

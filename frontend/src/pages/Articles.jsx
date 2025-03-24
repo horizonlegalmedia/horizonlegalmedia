@@ -1,11 +1,10 @@
 import React from 'react'
 import ArticleList from '../components/articles/ArticleList'
-import { articles } from '../data/article'
 
 const Articles = () => {
   return (
     <div>
-      <ArticleList articles={articles}/>
+      <ArticleList/>
     </div>
   )
 }

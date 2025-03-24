@@ -1,5 +1,9 @@
 import React from 'react';
 import ceo from '../../src/data/images/others/ceo.jpg'
+import Challenges from '../components/about/Challenges'
+import Solutions from '../components/about/Solutions'
+import WhyUs from '../components/about/WhyUs'
+
 
 const About = () => {
   return (
@@ -44,11 +48,17 @@ const About = () => {
             </div>
           </div>
         </div>
-
         {/* Floating Background Elements */}
         <div className="absolute top-20 -left-20 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
         <div className="absolute top-1/3 -right-20 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float-delayed"></div>
       </section>
+
+      <Challenges />
+
+      <Solutions />
+
+      <WhyUs /> 
+
 
       {/* CEO Section with 3D Effect */}
       <section className="px-4 py-12 md:py-24 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
@@ -105,7 +115,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* Animated Background Elements */}
       <style jsx global>{`
     @keyframes gradient-x {

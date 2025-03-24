@@ -10,7 +10,7 @@ const Main = () => {
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat"
     }}>
-      <div className="w-full lg:w-1/2 flex flex-col p-4">
+      <div className="w-full md:w-1/2 flex flex-col p-4">
         <div className="max-w-2xl mx-auto my-36 lg:my-auto lg:mx-0" >
           {/* Animated Heading with staggered entries */}
           <h1 className="text-4xl font-bold mb-4 text-left lg:text-4xl text-white">
@@ -21,9 +21,9 @@ const Main = () => {
             <span className="block animate-fade-in-up opacity-0 [animation-delay:400ms]">
               Strong Branding.
             </span>
-            <span className="block animate-fade-in-up opacity-0 md:text-blue-600 [animation-delay:600ms]">
+            <span className="block animate-fade-in-up opacity-0 text-blue-600 [animation-delay:600ms]">
               Backed by Legal Expertise.
-            </span>
+            </span>                             
           </h1>
 
           {/* Animated Paragraph */}
@@ -36,7 +36,7 @@ const Main = () => {
           {/* Pulsing Button */}
           <button className="bg-blue-600 text-white px-6 py-3 rounded-lg 
                      hover:bg-blue-700 transition-all duration-300 
-                     self-start animate-pulse-slow md:w-full">
+                     self-start animate-pulse-slow md:w-[90%] ">
             <a href='https://calendly.com/horizonlegalmedia/30min'
               target="_blank"
               rel="noopener noreferrer">
