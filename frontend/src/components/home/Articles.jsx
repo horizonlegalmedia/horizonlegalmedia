@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom'
+import { url } from '../../data/dummy';
 
 const Articles = () => {
   const [topFiveArticles, setTopFiveArticles] = useState([]);
@@ -14,7 +15,7 @@ const Articles = () => {
 
   useEffect(() => {
     // Fetch Top article from backend
-    axios.get("http://localhost:5000/api/articles/top-five-articles")
+    axios.get(`${url}/articles/top-five-articles`)
       .then(response => {
         setTopFiveArticles(response.data);
         setLoading(false);

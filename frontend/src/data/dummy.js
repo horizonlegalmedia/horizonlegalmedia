@@ -5,3 +5,5 @@ export const navItems = [
     { name: 'About Us', link: '/about' },
 ];
 
+export const url="https://horizonlegalmedia-backend.onrender.com/api"
+

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import { url } from "../../data/dummy";
 
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
@@ -9,7 +10,7 @@ const ArticleList = () => {
 
   useEffect(() => {
     // Fetch articles from backend
-    axios.get("http://localhost:5000/api/articles")
+    axios.get(`${url}/articles`)
       .then(response => {
         setArticles(response.data);
         setLoading(false);

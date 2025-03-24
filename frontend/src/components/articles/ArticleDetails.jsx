@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import PageNotFound from '../PageNotFound';
+import { url } from '../../data/dummy';
 
 
 const ContentBlockRenderer = ({ block }) => {
@@ -35,7 +36,7 @@ const ArticleDetail = () => {
   const { slug } = useParams();
   useEffect(() => {
     // Fetch article from backend
-    axios.get(`http://localhost:5000/api/articles/${slug}`)
+    axios.get(`${url}/articles/${slug}`)
       .then(response => {
         setArticle(response.data);
         setLoading(false);
