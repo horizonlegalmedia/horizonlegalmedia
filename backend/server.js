@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: "https://horizonlegalmedia.com/", // Replace with your Netlify URL
+  origin: "https://horizonlegalmedia.com", // Replace with your Netlify URL
   methods: "GET,POST,PUT,DELETE",
   credentials: true
 }));
